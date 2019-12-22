@@ -24,5 +24,6 @@
 
     <modules>
         <module>thread</module>
+        <module>JVM</module>
     </modules>
 </project>
