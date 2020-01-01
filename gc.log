@@ -1,0 +1,33 @@
+Java HotSpot(TM) 64-Bit Server VM (25.60-b23) for bsd-amd64 JRE (1.8.0_60-b27), built on Aug  4 2015 10:47:24 by "java_re" with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Memory: 4k page, physical 8388608k(225656k free)
+
+/proc/meminfo:
+
+CommandLine flags: -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./ -XX:InitialHeapSize=10485760 -XX:MaxHeapSize=10485760 -XX:MaxNewSize=3497984 -XX:MaxTenuringThreshold=6 -XX:NewSize=3497984 -XX:OldPLABSize=16 -XX:OldSize=6987776 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:+UseParNewGC 
+0.182: [GC (Allocation Failure) 0.182: [ParNew: 2751K->320K(3072K), 0.0066030 secs] 2751K->1307K(9920K), 0.0066956 secs] [Times: user=0.02 sys=0.01, real=0.01 secs] 
+0.191: [GC (Allocation Failure) 0.191: [ParNew: 2968K->320K(3072K), 0.0058156 secs] 3956K->3364K(9920K), 0.0058856 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+0.199: [GC (Allocation Failure) 0.199: [ParNew: 2204K->320K(3072K), 0.0041967 secs] 5249K->5240K(9920K), 0.0042618 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] 
+0.203: [GC (CMS Initial Mark) [1 CMS-initial-mark: 4920K(6848K)] 6178K(9920K), 0.0008269 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+0.204: [CMS-concurrent-mark-start]
+0.207: [GC (Allocation Failure) 0.207: [ParNew: 3072K->3072K(3072K), 0.0000241 secs]0.207: [CMS0.213: [CMS-concurrent-mark: 0.008/0.009 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+ (concurrent mode failure): 4920K->6847K(6848K), 0.0308774 secs] 7992K->6940K(9920K), [Metaspace: 3082K->3082K(1056768K)], 0.0310009 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+0.242: [Full GC (Allocation Failure) 0.242: [CMS: 6847K->6094K(6848K), 0.0290859 secs] 9919K->8965K(9920K), [Metaspace: 3083K->3083K(1056768K)], 0.0291837 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+0.271: [GC (CMS Initial Mark) [1 CMS-initial-mark: 6094K(6848K)] 8965K(9920K), 0.0061183 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+0.277: [CMS-concurrent-mark-start]
+0.298: [Full GC (Allocation Failure) 0.298: [CMS0.306: [CMS-concurrent-mark: 0.023/0.029 secs] [Times: user=0.04 sys=0.00, real=0.02 secs] 
+ (concurrent mode failure): 6847K->6845K(6848K), 0.0431344 secs] 9919K->9916K(9920K), [Metaspace: 3083K->3083K(1056768K)], 0.0432214 secs] [Times: user=0.04 sys=0.00, real=0.04 secs] 
+0.341: [Full GC (Allocation Failure) 0.342: [CMS: 6848K->6830K(6848K), 0.0352590 secs] 9919K->9902K(9920K), [Metaspace: 3083K->3083K(1056768K)], 0.0353307 secs] [Times: user=0.03 sys=0.00, real=0.04 secs] 
+0.377: [Full GC (Allocation Failure) 0.377: [CMS: 6847K->6847K(6848K), 0.0331782 secs] 9919K->9919K(9920K), [Metaspace: 3083K->3083K(1056768K)], 0.0332546 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+0.411: [Full GC (Allocation Failure) 0.411: [CMS: 6847K->6847K(6848K), 0.0293250 secs] 9919K->9919K(9920K), [Metaspace: 3083K->3083K(1056768K)], 0.0293911 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+0.440: [GC (CMS Initial Mark) [1 CMS-initial-mark: 6847K(6848K)] 9919K(9920K), 0.0063090 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+0.447: [CMS-concurrent-mark-start]
+0.545: [Full GC (Allocation Failure) 0.545: [CMS0.555: [CMS-concurrent-mark: 0.011/0.108 secs] [Times: user=0.09 sys=0.01, real=0.10 secs] 
+ (concurrent mode failure): 6847K->401K(6848K), 0.0143640 secs] 9919K->401K(9920K), [Metaspace: 3083K->3083K(1056768K)], 0.0144379 secs] [Times: user=0.02 sys=0.00, real=0.02 secs] 
+Heap
+ par new generation   total 3072K, used 109K [0x00000007bf600000, 0x00000007bf950000, 0x00000007bf950000)
+  eden space 2752K,   3% used [0x00000007bf600000, 0x00000007bf61b720, 0x00000007bf8b0000)
+  from space 320K,   0% used [0x00000007bf900000, 0x00000007bf900000, 0x00000007bf950000)
+  to   space 320K,   0% used [0x00000007bf8b0000, 0x00000007bf8b0000, 0x00000007bf900000)
+ concurrent mark-sweep generation total 6848K, used 401K [0x00000007bf950000, 0x00000007c0000000, 0x00000007c0000000)
+ Metaspace       used 3114K, capacity 4500K, committed 4864K, reserved 1056768K
+  class space    used 343K, capacity 388K, committed 512K, reserved 1048576K

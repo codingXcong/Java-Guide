@@ -3,10 +3,11 @@ package oom;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
-
 import java.lang.reflect.Method;
 
 /**
+ * VM args:
+ *    -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:MetaspaceSize=10m -XX:MaxMetaspaceSize=10m  -XX:+PrintGCDetails -Xloggc:gc.log  -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./
  * @author zhangguicong
  * @date 2019-12-23
  */
