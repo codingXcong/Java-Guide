@@ -25,5 +25,8 @@
     <modules>
         <module>thread</module>
         <module>JVM</module>
+        <module>network</module>
+        <module>netty</module>
+        <module>guice</module>
     </modules>
 </project>
