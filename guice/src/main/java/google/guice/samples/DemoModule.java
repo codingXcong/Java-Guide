@@ -21,4 +21,8 @@ public class DemoModule extends AbstractModule {
     static String provideMessage() {
         return "hello world";
     }
+
+    @Override protected void configure() {
+
+    }
 }
