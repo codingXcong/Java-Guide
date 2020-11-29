@@ -18,7 +18,7 @@ public class DesUtils {
     public static byte[] encryptDes(String plainText, String secretKeyStr) throws Exception {
         //SecretKey secretKey = genDesKey();
         // 构建密钥
-        SecretKey secretKey = SecretKeyGenerator.genDesKey(secretKeyStr);
+        SecretKey secretKey = MyKeyGenerator.genDesKey(secretKeyStr);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         // 初始化为加密模式
         cipher.init(Cipher.ENCRYPT_MODE,secretKey);
@@ -28,7 +28,7 @@ public class DesUtils {
 
     public static byte[] decryptDes(byte[] cipherData, String secretKeyStr) throws Exception {
         // 构建密钥
-        SecretKey secretKey = SecretKeyGenerator.genDesKey(secretKeyStr);
+        SecretKey secretKey = MyKeyGenerator.genDesKey(secretKeyStr);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         // 初始化为解密模式
         cipher.init(Cipher.DECRYPT_MODE, secretKey);
@@ -37,7 +37,7 @@ public class DesUtils {
     }
 
     public static byte[] encrypt3Des(String plainText, String secretKeyStr) throws Exception {
-        SecretKey secretKey = SecretKeyGenerator.genDESedeKey(secretKeyStr);
+        SecretKey secretKey = MyKeyGenerator.genDESedeKey(secretKeyStr);
         Cipher cipher = Cipher.getInstance(ALGORITHM_3DES);
         // 初始化为加密模式
         cipher.init(Cipher.ENCRYPT_MODE, secretKey);
@@ -46,7 +46,7 @@ public class DesUtils {
     }
 
     public static byte[] decrypt3Des(byte[] cipherData, String secretKeyStr) throws Exception {
-        SecretKey secretKey = SecretKeyGenerator.genDESedeKey(secretKeyStr);
+        SecretKey secretKey = MyKeyGenerator.genDESedeKey(secretKeyStr);
         Cipher cipher = Cipher.getInstance(ALGORITHM_3DES);
         // 初始化为解密模式
         cipher.init(Cipher.DECRYPT_MODE, secretKey);

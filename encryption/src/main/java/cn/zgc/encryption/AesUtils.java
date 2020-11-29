@@ -31,7 +31,7 @@ public class AesUtils {
         try {
             //初始化密码器
             Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
-            Key key = SecretKeyGenerator.genAesKey(password);
+            Key key = MyKeyGenerator.genAesKey(password);
             cipher.init(Cipher.ENCRYPT_MODE, key);
             // 加密
             byte[] result = cipher.doFinal(plainText.getBytes(CODE));
@@ -56,7 +56,7 @@ public class AesUtils {
         try {
             //初始化密码器
             Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
-            Key key = SecretKeyGenerator.genAesKey(password);
+            Key key = MyKeyGenerator.genAesKey(password);
             cipher.init(Cipher.DECRYPT_MODE, key);
             // 加密
             byte[] result = cipher.doFinal(Base64.decodeBase64(content));
@@ -73,10 +73,10 @@ public class AesUtils {
      * @return
      */
     private static SecretKeySpec getSecretKey(final String password) {
-        //返回生成指定算法密钥生成器的 KeyGenerator 对象
-        KeyGenerator kg = null;
+        //返回生成指定算法密钥生成器的 MyKeyGenerator 对象
+        javax.crypto.KeyGenerator kg = null;
         try {
-            kg = KeyGenerator.getInstance(KEY_ALGORITHM);
+            kg = javax.crypto.KeyGenerator.getInstance(KEY_ALGORITHM);
 
             SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
             random.setSeed(password.getBytes());
