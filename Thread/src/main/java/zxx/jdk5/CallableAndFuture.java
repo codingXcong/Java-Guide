@@ -2,11 +2,8 @@ package zxx.jdk5;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
+
 /**
  * Callable和Runnable基本类似，其中Runnable没有返回结果，Callable可以返回结果。
  * 		Future接收Callable放回的结果。
@@ -14,6 +11,18 @@ import java.util.concurrent.Future;
  */
 public class CallableAndFuture {
 	public static void main(String[] args) throws Exception{
+		FutureTask<Integer> futureTask = new FutureTask<>(() -> {
+			System.out.println("当前线程:" + Thread.currentThread().getName());
+			Integer i = 14 / 2;
+			System.out.println("运行结果:" + i);
+			return i;
+		});
+		new Thread(futureTask).start();
+		Integer result = futureTask.get();
+		System.out.println(result);
+
+
+
 		ExecutorService threadPool = Executors.newSingleThreadExecutor();
 		//Future获取Callable执行得到的结果
 		final Future<String> future = threadPool.submit(new Callable<String>() {

@@ -8,12 +8,13 @@ public class InheritableThreadLocalExample2 {
 
     public static ThreadLocal<Stu> wrongThreadLocal = new InheritableThreadLocal<>();
     public static ThreadLocal<Stu> rightThreadLocal = new MyInheritableThreadLocal<>();
+    // 线程数为1表示可以进行线程复用
     public static ExecutorService executorService = Executors.newFixedThreadPool(1);
 
     public static void main(String[] args) throws Exception{
-        //wrong();
+        wrong();
         System.out.println("-------------------------------------");
-        right();
+        //right();
     }
 
     public static void right() throws InterruptedException {
@@ -32,6 +33,7 @@ public class InheritableThreadLocalExample2 {
         System.out.println("right 主线程读取本地变量："+ rightThreadLocal.get());
 
         executorService.submit(() -> {
+            // 这里依然输出Stu{name='zgc', age=37}， ITL在做主子线程传递的时候，是在创建子线程时复制过去，只要这个子线程不被销毁，那么在主线程对值进行的修改不会同步到子线程
             System.out.println("right 子线程读取本地变量: "+rightThreadLocal.get());
         });
     }
