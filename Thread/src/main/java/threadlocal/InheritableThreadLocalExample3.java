@@ -20,7 +20,7 @@ public class InheritableThreadLocalExample3 {
 
     public static void wrong() throws InterruptedException {
         wrongThreadLocal.set(1);
-
+        
         executorService.submit(() -> {
             wrongThreadLocal.set(11);
             System.out.println("sub thread : "+ wrongThreadLocal.get());
