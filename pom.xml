@@ -29,5 +29,6 @@
         <module>netty</module>
         <module>guice</module>
         <module>design-patterns</module>
+        <module>z-util</module>
     </modules>
 </project>
