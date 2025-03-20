@@ -11,5 +11,13 @@
 
     <artifactId>network</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.raxtone.flybus</groupId>
+            <artifactId>z-util</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
