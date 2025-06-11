@@ -21,7 +21,6 @@ public class NettyClient {
         try{
             // 创建客户端启动类
             Bootstrap bootstrap = new Bootstrap();
-
             // 设置相关参数
             bootstrap.group(group)
                     .channel(NioSocketChannel.class)
@@ -30,7 +29,6 @@ public class NettyClient {
                             ch.pipeline().addLast(new NettyClientHandler());
                         }
                     });
-
             // 连接服务器端
             ChannelFuture channelFuture = bootstrap.connect("localhost", 5555).sync();
             // 对关闭通道进行监听

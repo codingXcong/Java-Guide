@@ -4,7 +4,6 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
 import io.netty.handler.codec.http.websocketx.*;
-import lombok.Getter;
 import java.util.List;
 
 /**
@@ -62,7 +61,7 @@ public class WebSocketConvertHandler extends MessageToMessageCodec<WebSocketFram
     }
 
     //声明 WebSocketConvertHandler 所使用的 OUTBOUND_IN 类型
-    @Getter public static class MyWebSocketFrame {
+    public static class MyWebSocketFrame {
         //定义拥有被包装的有效负载的 WebSocketFrame 的类型
         public enum FrameType {
             BINARY,
@@ -79,6 +78,14 @@ public class WebSocketConvertHandler extends MessageToMessageCodec<WebSocketFram
         public MyWebSocketFrame(FrameType type, ByteBuf data) {
             this.type = type;
             this.data = data;
+        }
+
+        public FrameType getType() {
+            return type;
+        }
+
+        public ByteBuf getData() {
+            return data;
         }
     }
 }

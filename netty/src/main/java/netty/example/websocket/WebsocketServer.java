@@ -15,6 +15,10 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author zhangguicong
  * @date 2020-08-07
@@ -51,6 +55,14 @@ public class WebsocketServer {
                             pipeline.addLast(new WebsocketServerHandler());
                         }
                     });
+
+
+            // 定时任务，每5秒主动推送消息
+            ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+            executor.scheduleAtFixedRate(() -> {
+                WebsocketServerHandler.broadcast("你真实个SB");
+                System.out.println("已向所有客户端发送消息");
+            }, 5, 10, TimeUnit.SECONDS);
 
             ChannelFuture channelFuture = serverBootstrap.bind(10231).sync();
             channelFuture.channel().closeFuture().sync();
